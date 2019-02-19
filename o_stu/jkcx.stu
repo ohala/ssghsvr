@@ -1,0 +1,57 @@
+extern T_PkgType SSGHMIST_PROJECTMNG_MSP_tpl[];
+typedef struct {
+	char id[33];
+	char project_id[33];
+	char msptype_id[33];
+	char mspcode[33];
+	double bcoord;
+	double lcoord;
+	double hcoord;
+	char ifbushe;
+	char redsumalarm[40];
+	char redvelalarm[40];
+	char orangesumalarm[40];
+	char orangevelalarm[40];
+	char yellowsumalarm[40];
+	char yellowvelalarm[40];
+	char create_by[33];
+	char create_date[YEAR_TO_SEC_LEN];
+	char update_by[33];
+	char update_date[YEAR_TO_SEC_LEN];
+	char del_flag[3];
+	char remarks[256];
+	char zdhconfigtable[33];
+} SSGHMIST_PROJECTMNG_MSP_stu;
+	
+extern T_PkgType SSGHMIST_PROJECTMNG_JKCXCD_tpl[];
+typedef struct {
+	char id[33];
+	char project_id[33];
+	char imei[33];
+	char msp_id[33];
+	char typedeftail[6];
+	char installtime[YEAR_TO_SEC_LEN];
+	char deepth[33];
+	char JDITHER_NONE[33];
+	char wd[33];
+	char gettype[6];
+	char curcfg[33];
+	char cfginfo[33];
+} SSGHMIST_PROJECTMNG_JKCXCD_stu;
+
+extern T_PkgType SSGHMIST_JKCXWY_DATA_tpl[];
+typedef struct {
+	char id[33];
+	char raw1[13];
+	char raw2[13];
+	char qin1[13];
+	char qin2[13];
+	char rst1[13];
+	char rst2[13];
+	char ljm1[13];
+	char ljm2[13];
+	char allm[13];
+	char remark[13];
+	char lastgettime[YEAR_TO_SEC_LEN];
+} SGHMIST_JKCXWY_DATA_stu;
+

@@ -1,0 +1,69 @@
+input table name:HR.JOBS
+
+T_PkgType JOBS_tpl[]={
+	{CH_CHAR,11,"job_id",0,-1},
+	{CH_CHAR,36,"job_title"},
+	{CH_INT,sizeof(int),"min_salary"},
+	{CH_INT,sizeof(int),"max_salary"},
+	{-1,0,"HR.JOBS","job_id|"}
+};
+
+extern T_PkgType JOBS_tpl[];
+typedef struct {
+	char job_id[11];
+	char job_title[36];
+	int min_salary;
+	int max_salary;
+} JOBS_stu;
+
+input table name:HR.EMPLOYEES
+
+T_PkgType EMPLOYEES_tpl[]={
+	{CH_INT,sizeof(int),"employee_id",0,-1},
+	{CH_CHAR,21,"first_name"},
+	{CH_CHAR,26,"last_name"},
+	{CH_CHAR,26,"email"},
+	{CH_CHAR,21,"phone_number"},
+	{CH_DATE,YEAR_TO_SEC_LEN,"hire_date",YEAR_TO_SEC},
+	{CH_CHAR,11,"job_id"},
+	{CH_DOUBLE,sizeof(double),"salary","%10.2lf"},
+	{CH_DOUBLE,sizeof(double),"commission_pct","%4.2lf"},
+	{CH_INT,sizeof(int),"manager_id"},
+	{CH_SHORT,sizeof(short),"department_id"},
+	{-1,0,"HR.EMPLOYEES","employee_id|"}
+};
+
+extern T_PkgType EMPLOYEES_tpl[];
+typedef struct {
+	int employee_id;
+	char first_name[21];
+	char last_name[26];
+	char email[26];
+	char phone_number[21];
+	char hire_date[YEAR_TO_SEC_LEN];
+	char job_id[11];
+	double salary;
+	double commission_pct;
+	int manager_id;
+	short department_id;
+} EMPLOYEES_stu;
+
+input table name:HR.DEPARTMENTS
+
+T_PkgType DEPARTMENTS_tpl[]={
+	{CH_SHORT,sizeof(short),"department_id",0,-1},
+	{CH_CHAR,31,"department_name"},
+	{CH_INT,sizeof(int),"manager_id"},
+	{CH_SHORT,sizeof(short),"location_id"},
+	{-1,0,"HR.DEPARTMENTS","department_id|"}
+};
+
+extern T_PkgType DEPARTMENTS_tpl[];
+typedef struct {
+	short department_id;
+	char department_name[31];
+	int manager_id;
+	short location_id;
+} DEPARTMENTS_stu;
+
+
